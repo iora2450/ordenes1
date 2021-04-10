@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ordenesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CLIENTES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="APELLIDOS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="REGISTRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DETALLE_ORDEN" Relationship="ordenesModel.FK_DETALLE_ORDEN_CLIENTES" FromRole="CLIENTES" ToRole="DETALLE_ORDEN" />
+  </EntityType>
+  <EntityType Name="PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_PRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COSTO" Type="Double" />
+    <NavigationProperty Name="DETALLE_ORDEN" Relationship="ordenesModel.FK_DETALLE_ORDEN_PRODUCTOS" FromRole="PRODUCTOS" ToRole="DETALLE_ORDEN" />
+  </EntityType>
+  <EntityType Name="ROL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="USUARIOS" Relationship="Self.FK_USUARIOS_ROL" FromRole="ROL" ToRole="USUARIOS" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ROL_ID" Type="Int32" />
+    <NavigationProperty Name="ROL" Relationship="Self.FK_USUARIOS_ROL" FromRole="USUARIOS" ToRole="ROL" />
+    <NavigationProperty Name="DETALLE_ORDEN" Relationship="ordenesModel.FK_DETALLE_ORDEN_USUARIOS" FromRole="USUARIOS" ToRole="DETALLE_ORDEN" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_USUARIOS_ROL">
+    <End Role="ROL" Type="Self.ROL" Multiplicity="0..1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="ROL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ordenesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" />
+    <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTOS" />
+    <EntitySet Name="ROL" EntityType="Self.ROL" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
+    <AssociationSet Name="FK_USUARIOS_ROL" Association="Self.FK_USUARIOS_ROL">
+      <End Role="ROL" EntitySet="ROL" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+    <EntitySet Name="DETALLE_ORDEN" EntityType="ordenesModel.DETALLE_ORDEN" />
+    <AssociationSet Name="FK_DETALLE_ORDEN_CLIENTES" Association="ordenesModel.FK_DETALLE_ORDEN_CLIENTES">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_ORDEN_PRODUCTOS" Association="ordenesModel.FK_DETALLE_ORDEN_PRODUCTOS">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_ORDEN_USUARIOS" Association="ordenesModel.FK_DETALLE_ORDEN_USUARIOS">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DETALLE_ORDEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENTE_ID" Type="Int32" />
+    <Property Name="USUARIO_ID" Type="Int32" />
+    <Property Name="FECHA_ORDEN" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_INICIO" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_FIN" Type="DateTime" Precision="3" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PRODUCTO_ID" Type="Int32" />
+    <Property Name="CANTIDAD" Type="Double" />
+    <Property Name="MEDIDA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ALTO" Type="Double" />
+    <Property Name="ANCHO" Type="Double" />
+    <Property Name="ANCHO_BS" Type="Double" />
+    <Property Name="LARGO_BS" Type="Double" />
+    <Property Name="ANCHO_BN" Type="Double" />
+    <Property Name="LARGO_BN" Type="Double" />
+    <Property Name="COMENTARIO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENTES" Relationship="ordenesModel.FK_DETALLE_ORDEN_CLIENTES" FromRole="DETALLE_ORDEN" ToRole="CLIENTES" />
+    <NavigationProperty Name="PRODUCTOS" Relationship="ordenesModel.FK_DETALLE_ORDEN_PRODUCTOS" FromRole="DETALLE_ORDEN" ToRole="PRODUCTOS" />
+    <NavigationProperty Name="USUARIOS" Relationship="ordenesModel.FK_DETALLE_ORDEN_USUARIOS" FromRole="DETALLE_ORDEN" ToRole="USUARIOS" />
+  </EntityType>
+  <Association Name="FK_DETALLE_ORDEN_CLIENTES">
+    <End Type="ordenesModel.CLIENTES" Role="CLIENTES" Multiplicity="0..1" />
+    <End Type="ordenesModel.DETALLE_ORDEN" Role="DETALLE_ORDEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DETALLE_ORDEN">
+        <PropertyRef Name="CLIENTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_ORDEN_PRODUCTOS">
+    <End Type="ordenesModel.PRODUCTOS" Role="PRODUCTOS" Multiplicity="0..1" />
+    <End Type="ordenesModel.DETALLE_ORDEN" Role="DETALLE_ORDEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DETALLE_ORDEN">
+        <PropertyRef Name="PRODUCTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_ORDEN_USUARIOS">
+    <End Type="ordenesModel.USUARIOS" Role="USUARIOS" Multiplicity="0..1" />
+    <End Type="ordenesModel.DETALLE_ORDEN" Role="DETALLE_ORDEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DETALLE_ORDEN">
+        <PropertyRef Name="USUARIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
