@@ -24,6 +24,7 @@ namespace ordenes
             if(ver)
             {
                 btnGuardar.Visible = true;
+       
                 button1.Visible = false;
                 button2.Visible = false;
                 button3.Visible = false;
@@ -69,8 +70,8 @@ namespace ordenes
                                        select det;
                     dateTimePicker1.Value = Convert.ToDateTime( lst_detalle.First().FECHA_ORDEN );
                     cmbcliente.SelectedValue = lst_detalle.First().CLIENTE_ID ;
-                     dtfechainicio.Value = Convert.ToDateTime(lst_detalle.First().FECHA_INICIO) ;
-                     dtfechafin.Value= Convert.ToDateTime(lst_detalle.First().FECHA_FIN);
+                     dtfechainicio.Text  = Convert.ToDateTime(lst_detalle.First().FECHA_INICIO).ToString() ;
+                     dtfechafin.Text = Convert.ToDateTime(lst_detalle.First().FECHA_FIN).ToString();
                     cmbvendedor.SelectedValue = lst_detalle.First().USUARIO_ID ;
                   cmbproductos.SelectedValue = lst_detalle.First().PRODUCTO_ID;
                     txtcantidad.Text =  lst_detalle.First().CANTIDAD.ToString();
@@ -101,6 +102,10 @@ namespace ordenes
                     
 
                 }
+                else
+                {
+                    cmbestado.Text = "NUEVO";
+                }
             }
         }
 
@@ -117,8 +122,8 @@ namespace ordenes
                     models.DETALLE_ORDEN dt = new models.DETALLE_ORDEN();
                     dt.FECHA_ORDEN = dateTimePicker1.Value;
                     dt.CLIENTE_ID = Convert.ToInt32(cmbcliente.SelectedValue);
-                    dt.FECHA_INICIO = dtfechainicio.Value;
-                    dt.FECHA_FIN = dtfechafin.Value;
+                   
+                   
                     dt.USUARIO_ID = Convert.ToInt32(cmbvendedor.SelectedValue);
                     dt.PRODUCTO_ID = Convert.ToInt32(cmbproductos.SelectedValue);
                     dt.CANTIDAD = Convert.ToDouble(txtcantidad.Text);
@@ -205,12 +210,40 @@ namespace ordenes
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdateStatus("CANCELADO");
+            if (cmbestado.Text == "NUEVO")
+            {
+                MessageBox.Show("comienze a trabajar la orden antes de colocarla en pendiente");
+            }
+            else
+            {
+                UpdateStatus("CANCELADO");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UpdateStatus("EN TRABAJO");
+            if (cmbestado.Text == "NUEVO")
+            {
+                using (ordenes.models.ordenesEntities db = new models.ordenesEntities())
+                {
+                    models.DETALLE_ORDEN dt = new models.DETALLE_ORDEN();
+                    var l = from d in db.DETALLE_ORDEN
+                            where d.ID == id
+                            select d;
+
+                    dt = l.ToList().First();
+                    dt.FECHA_INICIO = DateTime.Now;
+                    db.Entry(dt).State = System.Data.Entity.EntityState.Modified;
+
+
+                    db.SaveChanges();
+                    MessageBox.Show("Datos guardados con exito");
+                }
+            }
+
+                UpdateStatus("EN TRABAJO");
+
+            
         }
 
         public bool UpdateStatus(string p)
@@ -246,12 +279,46 @@ namespace ordenes
 
         private void button2_Click(object sender, EventArgs e)
         {
-            UpdateStatus("PENDIENTE");
+            if(cmbestado.Text =="NUEVO")
+            {
+                MessageBox.Show("comienze a trabajar la orden antes de colocarla en pendiente");
+            }
+            else
+            {
+                UpdateStatus("PENDIENTE");
+            }
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            UpdateStatus("COMPLETADO");
+            if (cmbestado.Text == "NUEVO")
+            {
+                MessageBox.Show("comienze a trabajar la orden antes de colocarla en pendiente");
+            }
+            else
+            {
+              
+                    using (ordenes.models.ordenesEntities db = new models.ordenesEntities())
+                    {
+                        models.DETALLE_ORDEN dt = new models.DETALLE_ORDEN();
+                        var l = from d in db.DETALLE_ORDEN
+                                where d.ID == id
+                                select d;
+
+                        dt = l.ToList().First();
+                        dt.FECHA_FIN  = DateTime.Now;
+                        dt.ESTADO = "COMPLETADO";
+                        db.Entry(dt).State = System.Data.Entity.EntityState.Modified;
+
+
+                        db.SaveChanges();
+                        MessageBox.Show("Datos guardados con exito");
+                    }
+      
+
+              
+            }
         }
 
         private const char SignoDecimal = '.'; // Carácter separador decimal

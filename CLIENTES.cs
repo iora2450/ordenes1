@@ -69,7 +69,7 @@ namespace ordenes
                 {
                     MessageBox.Show("Complete la informacion");
                 }
-
+                
 
                 using (ordenes.models.ordenesEntities db = new models.ordenesEntities())
                 {

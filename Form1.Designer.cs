@@ -33,8 +33,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dtfechafin = new System.Windows.Forms.DateTimePicker();
-            this.dtfechainicio = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbvendedor = new System.Windows.Forms.ComboBox();
             this.cmbestado = new System.Windows.Forms.ComboBox();
@@ -68,6 +66,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtalto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.dtfechainicio = new System.Windows.Forms.TextBox();
+            this.dtfechafin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,12 +88,12 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.dtfechafin);
+            this.splitContainer1.Panel1.Controls.Add(this.dtfechainicio);
             this.splitContainer1.Panel1.Controls.Add(this.button4);
             this.splitContainer1.Panel1.Controls.Add(this.button3);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.dtfechafin);
-            this.splitContainer1.Panel1.Controls.Add(this.dtfechainicio);
             this.splitContainer1.Panel1.Controls.Add(this.btnGuardar);
             this.splitContainer1.Panel1.Controls.Add(this.cmbvendedor);
             this.splitContainer1.Panel1.Controls.Add(this.cmbestado);
@@ -153,22 +153,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dtfechafin
-            // 
-            this.dtfechafin.Enabled = false;
-            this.dtfechafin.Location = new System.Drawing.Point(406, 78);
-            this.dtfechafin.Name = "dtfechafin";
-            this.dtfechafin.Size = new System.Drawing.Size(94, 20);
-            this.dtfechafin.TabIndex = 15;
-            // 
-            // dtfechainicio
-            // 
-            this.dtfechainicio.Enabled = false;
-            this.dtfechainicio.Location = new System.Drawing.Point(406, 49);
-            this.dtfechainicio.Name = "dtfechainicio";
-            this.dtfechainicio.Size = new System.Drawing.Size(94, 20);
-            this.dtfechainicio.TabIndex = 14;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(25, 13);
@@ -189,8 +173,10 @@
             // 
             // cmbestado
             // 
+            this.cmbestado.Enabled = false;
             this.cmbestado.FormattingEnabled = true;
             this.cmbestado.Items.AddRange(new object[] {
+            "NUEVO",
             "PENDIENTE",
             "CANCELADO",
             "EN TRABAJO",
@@ -221,7 +207,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(320, 83);
+            this.label4.Location = new System.Drawing.Point(287, 82);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 5;
@@ -230,7 +216,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(320, 49);
+            this.label3.Location = new System.Drawing.Point(287, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 4;
@@ -500,6 +486,22 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "ALTO:";
             // 
+            // dtfechainicio
+            // 
+            this.dtfechainicio.Location = new System.Drawing.Point(373, 48);
+            this.dtfechainicio.Name = "dtfechainicio";
+            this.dtfechainicio.ReadOnly = true;
+            this.dtfechainicio.Size = new System.Drawing.Size(132, 20);
+            this.dtfechainicio.TabIndex = 20;
+            // 
+            // dtfechafin
+            // 
+            this.dtfechafin.Location = new System.Drawing.Point(373, 75);
+            this.dtfechafin.Name = "dtfechafin";
+            this.dtfechafin.ReadOnly = true;
+            this.dtfechafin.Size = new System.Drawing.Size(132, 20);
+            this.dtfechafin.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,12 +567,12 @@
         private System.Windows.Forms.RadioButton rbpul;
         private System.Windows.Forms.RadioButton rbcm;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DateTimePicker dtfechafin;
-        private System.Windows.Forms.DateTimePicker dtfechainicio;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox dtfechainicio;
+        private System.Windows.Forms.TextBox dtfechafin;
     }
 }
 
