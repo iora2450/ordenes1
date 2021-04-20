@@ -146,7 +146,7 @@ namespace ordenes
                 uSUARIOSToolStripMenuItem.Visible = false;
 
             }
-            else
+            else if (Utiles.guse.ROL_ID == 1)
             {
 
                 vENDEDORESToolStripMenuItem.Visible = true;
@@ -155,6 +155,15 @@ namespace ordenes
                 oRDENESToolStripMenuItem.Visible = true;
                 uSUARIOSToolStripMenuItem.Visible = true;
             }
+            else
+            {
+                vENDEDORESToolStripMenuItem.Visible = false;
+                cLIENTESToolStripMenuItem.Visible = true;
+                pRODUCTOSToolStripMenuItem.Visible = true;
+                oRDENESToolStripMenuItem.Visible = true;
+                uSUARIOSToolStripMenuItem.Visible = false;
+            }
+        
        
 
                         bandeja newMDIChild = new bandeja();

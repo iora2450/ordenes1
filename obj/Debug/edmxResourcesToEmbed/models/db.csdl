@@ -18,7 +18,6 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NOMBRE_PRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="COSTO" Type="Double" />
     <NavigationProperty Name="DETALLE_ORDEN" Relationship="ordenesModel.FK_DETALLE_ORDEN_PRODUCTOS" FromRole="PRODUCTOS" ToRole="DETALLE_ORDEN" />
   </EntityType>
   <EntityType Name="ROL">
@@ -112,6 +111,7 @@
     <NavigationProperty Name="CLIENTES" Relationship="ordenesModel.FK_DETALLE_ORDEN_CLIENTES" FromRole="DETALLE_ORDEN" ToRole="CLIENTES" />
     <NavigationProperty Name="PRODUCTOS" Relationship="ordenesModel.FK_DETALLE_ORDEN_PRODUCTOS" FromRole="DETALLE_ORDEN" ToRole="PRODUCTOS" />
     <NavigationProperty Name="USUARIOS" Relationship="ordenesModel.FK_DETALLE_ORDEN_USUARIOS" FromRole="DETALLE_ORDEN" ToRole="USUARIOS" />
+    <Property Name="PRECIO" Type="Double" />
   </EntityType>
   <Association Name="FK_DETALLE_ORDEN_CLIENTES">
     <End Type="ordenesModel.CLIENTES" Role="CLIENTES" Multiplicity="0..1" />

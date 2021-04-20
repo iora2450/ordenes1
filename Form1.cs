@@ -127,6 +127,7 @@ namespace ordenes
                     dt.USUARIO_ID = Convert.ToInt32(cmbvendedor.SelectedValue);
                     dt.PRODUCTO_ID = Convert.ToInt32(cmbproductos.SelectedValue);
                     dt.CANTIDAD = Convert.ToDouble(txtcantidad.Text);
+                    dt.PRECIO = Convert.ToDouble(textBox1 .Text);
                     dt.COMENTARIO = txtcomentario.Text;
                     if (rbcm.Checked )
                     {

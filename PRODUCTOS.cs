@@ -31,7 +31,7 @@ namespace ordenes
 
                     txtid.Text = lst_detalle.First().ID.ToString();
                     txtnombre.Text = lst_detalle.First().NOMBRE_PRODUCTO ;
-                    txtcosto .Text = lst_detalle.First().COSTO.ToString();
+         
 
 
 
@@ -47,7 +47,7 @@ namespace ordenes
                 {
                     models.PRODUCTOS  dt = new models.PRODUCTOS();
                     dt.NOMBRE_PRODUCTO = txtnombre.Text;
-                    dt.COSTO  = Convert.ToDouble( txtcosto .Text);
+
            
                     if (id > 0)
                     {

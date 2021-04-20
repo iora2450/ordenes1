@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dtfechafin = new System.Windows.Forms.TextBox();
+            this.dtfechainicio = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -66,8 +68,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtalto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dtfechainicio = new System.Windows.Forms.TextBox();
-            this.dtfechafin = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -112,6 +114,22 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 107;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // dtfechafin
+            // 
+            this.dtfechafin.Location = new System.Drawing.Point(373, 75);
+            this.dtfechafin.Name = "dtfechafin";
+            this.dtfechafin.ReadOnly = true;
+            this.dtfechafin.Size = new System.Drawing.Size(132, 20);
+            this.dtfechafin.TabIndex = 21;
+            // 
+            // dtfechainicio
+            // 
+            this.dtfechainicio.Location = new System.Drawing.Point(373, 48);
+            this.dtfechainicio.Name = "dtfechainicio";
+            this.dtfechainicio.ReadOnly = true;
+            this.dtfechainicio.Size = new System.Drawing.Size(132, 20);
+            this.dtfechainicio.TabIndex = 20;
             // 
             // button4
             // 
@@ -275,6 +293,8 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer2.Panel1.Controls.Add(this.label16);
             this.splitContainer2.Panel1.Controls.Add(this.txtcomentario);
             this.splitContainer2.Panel1.Controls.Add(this.label15);
             this.splitContainer2.Panel1.Controls.Add(this.txtcantidad);
@@ -322,7 +342,7 @@
             // 
             // txtcantidad
             // 
-            this.txtcantidad.Location = new System.Drawing.Point(109, 73);
+            this.txtcantidad.Location = new System.Drawing.Point(109, 50);
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(200, 20);
             this.txtcantidad.TabIndex = 10;
@@ -331,7 +351,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 80);
+            this.label8.Location = new System.Drawing.Point(32, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 4;
@@ -486,21 +506,22 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "ALTO:";
             // 
-            // dtfechainicio
+            // textBox1
             // 
-            this.dtfechainicio.Location = new System.Drawing.Point(373, 48);
-            this.dtfechainicio.Name = "dtfechainicio";
-            this.dtfechainicio.ReadOnly = true;
-            this.dtfechainicio.Size = new System.Drawing.Size(132, 20);
-            this.dtfechainicio.TabIndex = 20;
+            this.textBox1.Location = new System.Drawing.Point(109, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.Text = "0";
             // 
-            // dtfechafin
+            // label16
             // 
-            this.dtfechafin.Location = new System.Drawing.Point(373, 75);
-            this.dtfechafin.Name = "dtfechafin";
-            this.dtfechafin.ReadOnly = true;
-            this.dtfechafin.Size = new System.Drawing.Size(132, 20);
-            this.dtfechafin.TabIndex = 21;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(32, 89);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(50, 13);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "PRECIO:";
             // 
             // Form1
             // 
@@ -573,6 +594,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox dtfechainicio;
         private System.Windows.Forms.TextBox dtfechafin;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label16;
     }
 }
 

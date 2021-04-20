@@ -18,7 +18,6 @@
         <MappingFragment StoreEntitySet="PRODUCTOS">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NOMBRE_PRODUCTO" ColumnName="NOMBRE_PRODUCTO" />
-          <ScalarProperty Name="COSTO" ColumnName="COSTO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -56,6 +55,7 @@
     <EntitySetMapping Name="DETALLE_ORDEN">
       <EntityTypeMapping TypeName="ordenesModel.DETALLE_ORDEN">
         <MappingFragment StoreEntitySet="DETALLE_ORDEN">
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
           <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
           <ScalarProperty Name="LARGO_BN" ColumnName="LARGO_BN" />
           <ScalarProperty Name="ANCHO_BN" ColumnName="ANCHO_BN" />

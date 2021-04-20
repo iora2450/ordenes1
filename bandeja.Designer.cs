@@ -29,6 +29,17 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.btnactualizar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
@@ -40,23 +51,14 @@
             this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VENDEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.FECHA_INICIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHA_FIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -86,6 +88,110 @@
             this.splitContainer1.SplitterDistance = 61;
             this.splitContainer1.TabIndex = 0;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Location = new System.Drawing.Point(363, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(282, 54);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(262, 39);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 14;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "VENDEDOR";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(261, 15);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "CLIENTE";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(96, 35);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(158, 21);
+            this.comboBox2.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(96, 11);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(158, 21);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(698, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "FECHA DE FIN";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(680, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "FECHA DE INICIO";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(796, 34);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 6;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(796, 8);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 14);
@@ -114,6 +220,7 @@
             this.BtnEliminar.TabIndex = 2;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnEditar
             // 
@@ -148,7 +255,9 @@
             this.FECHA_ORDEN,
             this.CLIENTE,
             this.VENDEDOR,
-            this.ESTADO});
+            this.ESTADO,
+            this.FECHA_INICIO,
+            this.FECHA_FIN});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -191,109 +300,19 @@
             this.ESTADO.Name = "ESTADO";
             this.ESTADO.ReadOnly = true;
             // 
-            // dateTimePicker1
+            // FECHA_INICIO
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(796, 8);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.FECHA_INICIO.DataPropertyName = "FECHA_INICIO";
+            this.FECHA_INICIO.HeaderText = "FECHA_INICIO";
+            this.FECHA_INICIO.Name = "FECHA_INICIO";
+            this.FECHA_INICIO.ReadOnly = true;
             // 
-            // dateTimePicker2
+            // FECHA_FIN
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(796, 34);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(680, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "FECHA DE INICIO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(698, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "FECHA DE FIN";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "VENDEDOR";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "CLIENTE";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 11);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 21);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(96, 35);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 21);
-            this.comboBox2.TabIndex = 12;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(261, 15);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(262, 39);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 14;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(363, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 54);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.FECHA_FIN.DataPropertyName = "FECHA_FIN";
+            this.FECHA_FIN.HeaderText = "FECHA_FIN";
+            this.FECHA_FIN.Name = "FECHA_FIN";
+            this.FECHA_FIN.ReadOnly = true;
             // 
             // bandeja
             // 
@@ -312,9 +331,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,11 +345,6 @@
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_ORDEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VENDEDOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.Button btnactualizar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -344,5 +358,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_ORDEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VENDEDOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_INICIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_FIN;
     }
 }

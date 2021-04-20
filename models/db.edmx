@@ -37,6 +37,7 @@
           <Property Name="ANCHO_BN" Type="float" />
           <Property Name="LARGO_BN" Type="float" />
           <Property Name="COMENTARIO" Type="varchar" MaxLength="500" />
+          <Property Name="PRECIO" Type="float" />
         </EntityType>
         <EntityType Name="PRODUCTOS">
           <Key>
@@ -44,7 +45,6 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NOMBRE_PRODUCTO" Type="varchar" MaxLength="50" />
-          <Property Name="COSTO" Type="float" />
         </EntityType>
         <EntityType Name="ROL">
           <Key>
@@ -168,7 +168,6 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NOMBRE_PRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="COSTO" Type="Double" />
           <NavigationProperty Name="DETALLE_ORDEN" Relationship="ordenesModel.FK_DETALLE_ORDEN_PRODUCTOS" FromRole="PRODUCTOS" ToRole="DETALLE_ORDEN" />
         </EntityType>
         <EntityType Name="ROL">
@@ -262,6 +261,7 @@
           <NavigationProperty Name="CLIENTES" Relationship="ordenesModel.FK_DETALLE_ORDEN_CLIENTES" FromRole="DETALLE_ORDEN" ToRole="CLIENTES" />
           <NavigationProperty Name="PRODUCTOS" Relationship="ordenesModel.FK_DETALLE_ORDEN_PRODUCTOS" FromRole="DETALLE_ORDEN" ToRole="PRODUCTOS" />
           <NavigationProperty Name="USUARIOS" Relationship="ordenesModel.FK_DETALLE_ORDEN_USUARIOS" FromRole="DETALLE_ORDEN" ToRole="USUARIOS" />
+          <Property Name="PRECIO" Type="Double" />
         </EntityType>
         <Association Name="FK_DETALLE_ORDEN_CLIENTES">
           <End Type="ordenesModel.CLIENTES" Role="CLIENTES" Multiplicity="0..1" />
@@ -322,7 +322,6 @@
               <MappingFragment StoreEntitySet="PRODUCTOS">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NOMBRE_PRODUCTO" ColumnName="NOMBRE_PRODUCTO" />
-                <ScalarProperty Name="COSTO" ColumnName="COSTO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -360,6 +359,7 @@
           <EntitySetMapping Name="DETALLE_ORDEN">
             <EntityTypeMapping TypeName="ordenesModel.DETALLE_ORDEN">
               <MappingFragment StoreEntitySet="DETALLE_ORDEN">
+                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
                 <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
                 <ScalarProperty Name="LARGO_BN" ColumnName="LARGO_BN" />
                 <ScalarProperty Name="ANCHO_BN" ColumnName="ANCHO_BN" />

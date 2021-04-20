@@ -32,6 +32,7 @@
     <Property Name="ANCHO_BN" Type="float" />
     <Property Name="LARGO_BN" Type="float" />
     <Property Name="COMENTARIO" Type="varchar" MaxLength="500" />
+    <Property Name="PRECIO" Type="float" />
   </EntityType>
   <EntityType Name="PRODUCTOS">
     <Key>
@@ -39,7 +40,6 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NOMBRE_PRODUCTO" Type="varchar" MaxLength="50" />
-    <Property Name="COSTO" Type="float" />
   </EntityType>
   <EntityType Name="ROL">
     <Key>

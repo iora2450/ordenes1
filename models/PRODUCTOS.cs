@@ -22,7 +22,6 @@ namespace ordenes.models
     
         public int ID { get; set; }
         public string NOMBRE_PRODUCTO { get; set; }
-        public Nullable<double> COSTO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DETALLE_ORDEN> DETALLE_ORDEN { get; set; }

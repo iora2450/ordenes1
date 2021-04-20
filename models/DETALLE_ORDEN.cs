@@ -31,6 +31,7 @@ namespace ordenes.models
         public Nullable<double> ANCHO_BN { get; set; }
         public Nullable<double> LARGO_BN { get; set; }
         public string COMENTARIO { get; set; }
+        public Nullable<double> PRECIO { get; set; }
     
         public virtual CLIENTES CLIENTES { get; set; }
         public virtual PRODUCTOS PRODUCTOS { get; set; }
