@@ -34,7 +34,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE_PRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,6 +51,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.btnEditar);
             this.splitContainer1.Panel1.Controls.Add(this.btnnuevo);
             // 
@@ -91,8 +92,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.NOMBRE_PRODUCTO,
-            this.COSTO});
+            this.NOMBRE_PRODUCTO});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -114,12 +114,15 @@
             this.NOMBRE_PRODUCTO.Name = "NOMBRE_PRODUCTO";
             this.NOMBRE_PRODUCTO.ReadOnly = true;
             // 
-            // COSTO
+            // button1
             // 
-            this.COSTO.DataPropertyName = "COSTO";
-            this.COSTO.HeaderText = "COSTO";
-            this.COSTO.Name = "COSTO";
-            this.COSTO.ReadOnly = true;
+            this.button1.Location = new System.Drawing.Point(189, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BPRODUCTOS
             // 
@@ -147,6 +150,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_PRODUCTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COSTO;
+        private System.Windows.Forms.Button button1;
     }
 }

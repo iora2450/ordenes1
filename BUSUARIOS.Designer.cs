@@ -36,6 +36,7 @@
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,6 +53,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.btnEditar);
             this.splitContainer1.Panel1.Controls.Add(this.btnnuevo);
             // 
@@ -130,6 +132,16 @@
             this.ROL.Name = "ROL";
             this.ROL.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(186, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BUSUARIOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
         private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ROL;
+        private System.Windows.Forms.Button button1;
     }
 }

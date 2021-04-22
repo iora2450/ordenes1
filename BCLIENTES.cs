@@ -61,5 +61,34 @@ namespace ordenes
             newMDIChild.Close();
             refrescar();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string message = "Se eliminara el registro, continuar?";
+                string caption = "Confirmar";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    using (ordenes.models.ordenesEntities db = new models.ordenesEntities())
+                    {
+                        db.Database.ExecuteSqlCommand("delete from clientes where id = " + dataGridView1.CurrentRow.Cells["ID"].Value.ToString() + "");
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            refrescar();
+        }
     }
 }

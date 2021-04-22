@@ -36,11 +36,12 @@
             this.oRDENESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUCTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirVentanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.salirVentanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -72,37 +73,42 @@
             // cLIENTESToolStripMenuItem
             // 
             this.cLIENTESToolStripMenuItem.Name = "cLIENTESToolStripMenuItem";
-            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cLIENTESToolStripMenuItem.Text = "CLIENTES";
             this.cLIENTESToolStripMenuItem.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem_Click);
             // 
             // vENDEDORESToolStripMenuItem
             // 
             this.vENDEDORESToolStripMenuItem.Name = "vENDEDORESToolStripMenuItem";
-            this.vENDEDORESToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.vENDEDORESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vENDEDORESToolStripMenuItem.Text = "VENDEDORES";
             this.vENDEDORESToolStripMenuItem.Click += new System.EventHandler(this.vENDEDORESToolStripMenuItem_Click);
             // 
             // oRDENESToolStripMenuItem
             // 
             this.oRDENESToolStripMenuItem.Name = "oRDENESToolStripMenuItem";
-            this.oRDENESToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.oRDENESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oRDENESToolStripMenuItem.Text = "ORDENES";
             this.oRDENESToolStripMenuItem.Click += new System.EventHandler(this.oRDENESToolStripMenuItem_Click);
             // 
             // pRODUCTOSToolStripMenuItem
             // 
             this.pRODUCTOSToolStripMenuItem.Name = "pRODUCTOSToolStripMenuItem";
-            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pRODUCTOSToolStripMenuItem.Text = "PRODUCTOS";
             this.pRODUCTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTOSToolStripMenuItem_Click);
             // 
             // uSUARIOSToolStripMenuItem
             // 
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
-            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
             this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
+            // 
+            // salirVentanaToolStripMenuItem
+            // 
+            this.salirVentanaToolStripMenuItem.Name = "salirVentanaToolStripMenuItem";
+            this.salirVentanaToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
             // 
             // statusStrip
             // 
@@ -129,15 +135,22 @@
             this.tabControl1.Size = new System.Drawing.Size(1069, 407);
             this.tabControl1.TabIndex = 4;
             // 
-            // salirVentanaToolStripMenuItem
+            // button1
             // 
-     
+            this.button1.Location = new System.Drawing.Point(987, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Cerrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 453);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -170,6 +183,7 @@
         private System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ToolStripMenuItem salirVentanaToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

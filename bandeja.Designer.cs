@@ -187,6 +187,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(796, 8);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
@@ -357,7 +358,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_ORDEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
@@ -365,5 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_INICIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_FIN;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -38,6 +38,7 @@
             this.DIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.REGISTRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.btnEditar);
             this.splitContainer1.Panel1.Controls.Add(this.btnnuevo);
             // 
@@ -148,6 +150,16 @@
             this.REGISTRO.Name = "REGISTRO";
             this.REGISTRO.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(195, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BCLIENTES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,5 +190,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DIRECCION;
         private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
         private System.Windows.Forms.DataGridViewTextBoxColumn REGISTRO;
+        private System.Windows.Forms.Button button1;
     }
 }

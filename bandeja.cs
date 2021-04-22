@@ -26,7 +26,7 @@ namespace ordenes
                     var lst = from ordernes in db.DETALLE_ORDEN
                               join cliente1 in db.CLIENTES on ordernes.CLIENTE_ID equals cliente1.ID
                               join usuario1 in db.USUARIOS on ordernes.USUARIO_ID equals usuario1.ID
-                              where ordernes.FECHA_ORDEN    >= dateTimePicker1.Value.AddDays(-1) && ordernes.FECHA_ORDEN  <= dateTimePicker2.Value.AddDays(1)
+                              where ordernes.FECHA_ORDEN    >= dateTimePicker1.Value  && ordernes.FECHA_ORDEN  <= dateTimePicker2.Value
                           select new { ID = ordernes.ID, FECHA_ORDEN = ordernes.FECHA_ORDEN, CLIENTE = cliente1.NOMBRE, VENDEDOR = usuario1.NOMBRE, ESTADO = ordernes.ESTADO, FECHA_INICIO = ordernes.FECHA_INICIO , FECHA_FIN =  ordernes.FECHA_FIN  };
 
 
@@ -53,6 +53,12 @@ namespace ordenes
         {
             try
             {
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+                dateTimePicker1.CustomFormat  = "dd-MM-yyyy HH:ss";
+
+                dateTimePicker2.Format = DateTimePickerFormat.Custom;
+                dateTimePicker2.CustomFormat = "dd-MM-yyyy HH:ss";
+
                 refrescar();
                 if (Utiles.guse.ROL_ID == 3)
                 {

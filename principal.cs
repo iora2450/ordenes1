@@ -174,33 +174,118 @@ namespace ordenes
         private void cLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BCLIENTES  newMDIChild = new BCLIENTES();
-            WindowsOpen(newMDIChild);
+            int u = 0;
+            foreach (TabPage i in tabControl1.TabPages)
+            {
+                if (i.Text.Trim() == newMDIChild.Name.Trim())
+                {
+                    u += 1;
+                }
+            }
+            if (u == 0)
+            {
+                WindowsOpen(newMDIChild);
+
+            }
+
         }
 
         private void vENDEDORESToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BVENDEDOR  newMDIChild = new BVENDEDOR();
-            WindowsOpen(newMDIChild);
+
+            int u = 0;
+            foreach(TabPage i in tabControl1.TabPages )
+            {
+                if (i.Text.Trim() == newMDIChild.Name.Trim())
+                {
+                    u += 1;
+                }
+            }
+            if(u==0)
+            {
+                WindowsOpen(newMDIChild);
+
+            }
+
+
         }
 
         private void pRODUCTOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BPRODUCTOS newMDIChild = new BPRODUCTOS ();
-            WindowsOpen(newMDIChild);
+            int u = 0;
+            foreach (TabPage i in tabControl1.TabPages)
+            {
+                if (i.Text.Trim() == newMDIChild.Name.Trim())
+                {
+                    u += 1;
+                }
+            }
+            if (u == 0)
+            {
+                WindowsOpen(newMDIChild);
+
+            }
+
         }
 
         private void oRDENESToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bandeja newMDIChild = new bandeja();
-            WindowsOpen(newMDIChild);
+            int u = 0;
+            foreach (TabPage  i in tabControl1.TabPages)
+            {
+                if (i.Text .Trim() == newMDIChild.Name.Trim())
+                {
+                    u += 1;
+                }
+            }
+            if (u == 0)
+            {
+                WindowsOpen(newMDIChild);
+
+            }
+
         }
 
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BUSUARIOS newMDIChild = new BUSUARIOS();
-            WindowsOpen(newMDIChild);
+            int u = 0;
+            foreach (TabPage i in tabControl1.TabPages)
+            {
+                if (i.Text.Trim() == newMDIChild.Name.Trim())
+                {
+                    u += 1;
+                }
+            }
+            if (u == 0)
+            {
+                WindowsOpen(newMDIChild);
+
+            }
+
         }
 
-     
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*      Try
+                  Dim i As Integer = Me.TabControl1.SelectedTab.TabIndex
+                  TabControl1.TabPages.Remove(TabControl1.SelectedTab)
+                  If Not i = 0 Then
+                      TabControl1.SelectedIndex = i - 1
+                  End If
+
+              Catch ex As Exception
+
+              End Try*/
+            int i = this.tabControl1.SelectedIndex;
+            tabControl1.TabPages.Remove(tabControl1.TabPages[i]);
+
+
+
+        
+        }
     }
 }
