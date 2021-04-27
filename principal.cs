@@ -239,6 +239,7 @@ namespace ordenes
                 if (i.Text .Trim() == newMDIChild.Name.Trim())
                 {
                     u += 1;
+
                 }
             }
             if (u == 0)
